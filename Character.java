@@ -12,7 +12,7 @@ public class Character
  
  public Character( int newX, int newY){
    x = newX;
-   y = newY'
+   y = newY;
     }
  
  public double getDistance(){
