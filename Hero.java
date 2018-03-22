@@ -11,11 +11,10 @@ public class Hero extends Character
   private int y;
   int hp;
   int ammo;
-  public Hero(){
-      int x = 0;
-      int y = 0;
-      int hp = 5;
-      int ammo = 8;
+  public Hero(int newX, int newY){
+      super(newX, newY);
+      hp = 5;
+      ammo = 8;
   }
   public int getX(){
     return x;
