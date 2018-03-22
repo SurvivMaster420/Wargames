@@ -19,14 +19,13 @@ public class Grid
         }
     }
     
-    public void addCharacters(Character aCharacter){
+    public void addCharacter(Character aCharacter){
         players.add(aCharacter);
         numOfPlayers++;
-        
-        board[0][0] = numOfPlayers;
+        board[aCharacter.getY()][aCharacter.getX()] = numOfPlayers;
     }
     
-    public void addCharactersRandomly(Character aCharacter){
+    public void addCharacterRandomly(Character aCharacter){
         Random gen = new Random();
         players.add(aCharacter);
         numOfPlayers++;
@@ -37,11 +36,11 @@ public class Grid
             x = gen.nextInt(board.length);
             y = gen.nextInt(board.length);
         }
-        board[x][y] = numOfPlayers;
+        board[y][x] = numOfPlayers;
     }
     
     public boolean isSpotEmpty(int x, int y){
-        if(board[x][y] == -1){
+        if(board[y][x] == -1){
             return true;
         } else {
             return false;
@@ -59,7 +58,7 @@ public class Grid
                     out+=" "+board[i][j]+" ";
                 }
             }
-            out+="]";
+            out+="]\n";
         }
         
         return out;
