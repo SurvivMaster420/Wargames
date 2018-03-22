@@ -10,17 +10,14 @@ public class Robot extends Character
     // instance variables - replace the example below with your own
     private int x;
     private int y;
+    private int hp;
+    private int ammo;
     /**
      * Constructor for objects of class Robot
      */
-    public Robot()
+    public Robot(int newX, int newY)
     {
-        // initialise instance variables
-        String name = "Mr. Destructoid";
-        int hp = 5;
-        int ammo = 2;
-        int x = 9;
-        int y = 9;
+        super(newX, newY);
     } 
     public int getX(){
         return x;
