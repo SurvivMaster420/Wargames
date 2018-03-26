@@ -34,7 +34,8 @@ public class Character
       distance = Math.sqrt(((x-aChar.getX())^2) + ((y-aChar.getY())^2));
       return distance; //return distance between two characters
  }
- public void attack(Character aChar){ //Shoots a bullet towards a character based on their distance
-    
- }
+public void attack(Character aChar){// function for attack, uses parameter aChar
+        aChar.hp = aChar.hp - 1;
+        System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
+    }
 }
