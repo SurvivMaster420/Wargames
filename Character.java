@@ -35,7 +35,10 @@ public class Character
       return distance; //return distance between two characters
  }
 public void attack(Character aChar){// function for attack, uses parameter aChar
+        if((math.getrandom() * 15) >= this.getDistance(aChar))
+        {
         aChar.hp = aChar.hp - 1;
         System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
+        }
     }
 }
