@@ -6,7 +6,8 @@
  * @version (a version number or a date)
  */
 public class Character
-{ //Initializes the position of the characters
+{ 
+ //Initializes the position of the characters
  int x = 0;
  int y = 0;
  String name;
@@ -36,11 +37,12 @@ public class Character
       distance = Math.sqrt(((x-aChar.getX())^2) + ((y-aChar.getY())^2));
       return distance; //return distance between two characters
  }
-public void attack(Character aChar){// function for attack, uses parameter aChar
-        if((math.getrandom() * 15) >= this.getDistance(aChar))
+ 
+ public void attack(Character aChar){// function for attack, uses parameter aChar
+        if((Math.random() * 16) >= this.getDistance(aChar))
         {
-        aChar.hp = aChar.hp - 1;
-        System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
+         aChar.hp = aChar.hp - 1;
+         System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
         }
     }
 }
