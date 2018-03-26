@@ -7,8 +7,8 @@ import java.util.*;
  */
 public class Grid
 {
-    private int numOfPlayers = 0;
-    private int[][] board;
+    private int numOfCharacters = 0; //an int keeping track of the number of Characters in the Grid
+    private int[][] board; //a 2D array which, when printed out, represents where 
     private ArrayList<Character> players = new ArrayList<Character>();
     public Grid(int n){
         board = new int[n][n];
@@ -21,14 +21,14 @@ public class Grid
     
     public void addCharacter(Character aCharacter){
         players.add(aCharacter);
-        numOfPlayers++;
-        board[aCharacter.getY()][aCharacter.getX()] = numOfPlayers;
+        numOfCharacters++;
+        board[aCharacter.getY()][aCharacter.getX()] = numOfCharacters;
     }
     
     public void addCharacterRandomly(Character aCharacter){
         Random gen = new Random();
         players.add(aCharacter);
-        numOfPlayers++;
+        numOfCharacters++;
         
         int x = gen.nextInt(10);
         int y = gen.nextInt(10);
@@ -36,7 +36,7 @@ public class Grid
             x = gen.nextInt(board.length);
             y = gen.nextInt(board.length);
         }
-        board[y][x] = numOfPlayers;
+        board[y][x] = numOfCharacters;
     }
     
     public boolean isSpotEmpty(int x, int y){
@@ -64,7 +64,7 @@ public class Grid
                    out+="   "; 
                 } else {
                     out+=" "+board[i][j]+" ";
-                }//0x2764 <- unicode posistion value for heart/health pack  0x2604 <- unicode for ammo
+                }
             }
             out+="]\n";
         }
