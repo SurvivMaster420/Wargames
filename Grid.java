@@ -64,7 +64,7 @@ public class Grid
                    out+="   "; 
                 } else {
                     out+=" "+board[i][j]+" ";
-                }
+                }// 0x25A0 Black square 0x2604 ammo 0x2764 heart
             }
             out+="]\n";
         }
