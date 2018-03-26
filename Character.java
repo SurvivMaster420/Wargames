@@ -9,10 +9,12 @@ public class Character
 { //Initializes the position of the characters
  int x = 0;
  int y = 0;
+ String name;
  
- public Character( int newX, int newY){
+ public Character(int newX, int newY, String newName){
    x = newX;
    y = newY;
+   name = newName;
  }
  
  public int getX(){ //calls x position
@@ -21,6 +23,10 @@ public class Character
  
  public int getY(){ //calls y position
     return y;
+ }
+ 
+ public String getName(){//calls Character's name
+    return name;
  }
  
  public double getDistance(Character aChar){
