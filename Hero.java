@@ -5,26 +5,23 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Hero extends Character //extends character so it can share methods with robot class
+public class Hero extends Character
 {
-  private int x; //private necessary so it differs from other characters
+  private int x;
   private int y;
-  int hp; //amount of health of hero
-  int ammo; //amount of bullets hero can shoot
-  
-  public Hero(int newX, int newY){ //initializes variables for hero. Gives specified amount of hp and ammo
-      super(newX, newY);
-      hp = 5;
+  private int hp;
+  private int ammo;
+  public Hero(int newX, int newY, String newName, int newHp){
+      super(newX, newY, newName, newHp);
       ammo = 8;
-    
   }
-  public int getX(){ //return row number that hero is in
+  public int getX(){
     return x;
     }
-  public int getY(){ //return column number that hero is in
+  public int getY(){
     return y;
     }
-  public void attack(Character aChar){ //shoots a bullet towards specified target
+  public void attack(Character aChar){
       
   }
 }
