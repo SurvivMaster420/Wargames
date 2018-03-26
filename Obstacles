@@ -1,6 +1,6 @@
 public class Obstacle extends Character
 {
-    public Obstacle(int x, int y){
-        super(x,y);
+    public Obstacle(int newX, int newY, String newName, int newHp){
+        super(newX, newY, newName, newHp);
     }
 }
