@@ -15,14 +15,8 @@ public class Robot extends Character
     /**
      * Constructor for objects of class Robot
      */
-    public Robot(int newX, int newY)
+    public Robot(int newX, int newY, String newName, int newHp)
     {
-        super(newX, newY);
-    } 
-    public int getX(){
-        return x;
-    }
-    public int getY(){
-        return y;
+        super(newX, newY, newName, newHp);
     }
 }
