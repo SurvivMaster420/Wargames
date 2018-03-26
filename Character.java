@@ -6,7 +6,7 @@
  * @version (a version number or a date)
  */
 public class Character
-{
+{ //Initializes the position of the characters
  int x = 0;
  int y = 0;
  
@@ -15,15 +15,11 @@ public class Character
    y = newY;
  }
  
- public double getDistance(){
-     return 0;  
- }
- 
- public int getX(){
+ public int getX(){ //calls x position
     return x;
  }
  
- public int getY(){
+ public int getY(){ //calls y position
     return y;
  }
  
@@ -32,7 +28,7 @@ public class Character
       distance = Math.sqrt(((x-aChar.getX())^2) + ((y-aChar.getY())^2));
       return distance; //return distance between two characters
  }
- public void attack(Character aChar){
+ public void attack(Character aChar){ //Shoots a bullet towards a character based on their distance
     
  }
 }
