@@ -12,12 +12,14 @@ public class Character
  int y = 0;
  String name;
  int hp;
+ int ammo;
  
- public Character(int newX, int newY, String newName, int newHp){
+ public Character(int newX, int newY, String newName, int newHp, newAmmo){
    x = newX;
    y = newY;
    name = newName;
    hp = newHp;
+   ammo = newAmmo
  }
  
  public int getX(){ //calls x position
