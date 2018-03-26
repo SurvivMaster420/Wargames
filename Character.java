@@ -47,4 +47,33 @@ public class Character
          System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
         }
     }
+    
+ public void moveUp(Grid grid){
+    if(grid.isSpotEmpty(getX(), getY()-1)){
+        y -= 1;
+        grid.setSpot(getX(), getY(), grid.getSpot(getX(), getY()+1));
+        grid.setSpot(getX(), getY()+1, -1);
+    }
+ }
+ public void moveDown(Grid grid){
+    if(grid.isSpotEmpty(getX(), getY()-1)){
+        y += 1;
+        grid.setSpot(getX(), getY(), grid.getSpot(getX(), getY()-1));
+        grid.setSpot(getX(), getY()-1, -1);
+    } 
+ }
+ public void moveLeft(Grid grid){
+    if(grid.isSpotEmpty(getX(), getY()-1)){
+        x += 1;
+        grid.setSpot(getX(), getY(), grid.getSpot(getX()-1, getY()));
+        grid.setSpot(getX()+1, getY(), -1);
+    } 
+ }
+ public void moveRight(Grid grid){
+    if(grid.isSpotEmpty(getX(), getY()-1)){
+        x -= 1;
+        grid.setSpot(getX(), getY(), grid.getSpot(getX()+1, getY()));
+        grid.setSpot(getX()+1, getY(), -1);
+    } 
+ 
 }
