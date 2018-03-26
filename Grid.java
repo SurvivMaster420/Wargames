@@ -47,6 +47,14 @@ public class Grid
         }
     }
     
+    public void setSpot(int x1, int y1, int item){
+        board[y1][x1] = item;
+    }
+    
+    public int getSpot(int x, int y){
+        return board[y][x];
+    }
+    
     public String display(){
         String out = "";
         for(int i = 0; i < board.length; i++){
