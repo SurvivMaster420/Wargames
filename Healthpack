@@ -1,1 +1,16 @@
-
+public class HealthPack extends Character
+{
+   private int x;
+   private int y;
+   public HealthPack(int newX, int newY){
+       int x = newX;
+       int y = newY;
+   }
+   public int getX(){
+    return x;
+    }
+   public int getY(){
+    return y;
+    }
+   
+}
