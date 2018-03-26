@@ -1,12 +1,6 @@
 public class Obstacle extends Character
 {
-    private int obsx, obsy;
-    
-    public Obstacle(int x, int y)
-    {
-     obsx = x;
-     obsy = y;
+    public Obstacle(int x, int y){
+        super(x,y);
     }
-    
-    
 }
