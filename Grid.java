@@ -56,7 +56,7 @@ public class Grid
                    out+="   "; 
                 } else {
                     out+=" "+board[i][j]+" ";
-                }
+                }//0x2764 <- unicode posistion value for heart/health pack  0x2604 <- unicode for ammo
             }
             out+="]\n";
         }
