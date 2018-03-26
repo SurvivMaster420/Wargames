@@ -21,7 +21,4 @@ public class Hero extends Character
   public int getY(){
     return y;
     }
-  public void attack(Character aChar){
-      
-  }
-}
+
