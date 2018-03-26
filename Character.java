@@ -10,11 +10,13 @@ public class Character
  int x = 0;
  int y = 0;
  String name;
+ int hp;
  
- public Character(int newX, int newY, String newName){
+ public Character(int newX, int newY, String newName, int newHp){
    x = newX;
    y = newY;
    name = newName;
+   hp = newHp;
  }
  
  public int getX(){ //calls x position
