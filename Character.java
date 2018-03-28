@@ -1,25 +1,18 @@
-
-/**
- * Write a description of class Character here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Character
 { 
  //Initializes the position of the characters
- int x = 0;
- int y = 0;
- String name;
- int hp;
- int ammo;
+ private int x = 0;
+ private int y = 0;
+ private String name;
+ private int hp;
+ private int ammo;
  
- public Character(int newX, int newY, String newName, int newHp, newAmmo){
+ public Character(int newX, int newY, String newName, int newHp, int newAmmo){
    x = newX;
    y = newY;
    name = newName;
    hp = newHp;
-   ammo = newAmmo
+   ammo = newAmmo;
  }
  
  public int getX(){ //calls x position
@@ -34,6 +27,10 @@ public class Character
     return name;
  }
  
+ public int getHp(){
+    return hp;
+ }
+ 
  public double getDistance(Character aChar){
       double distance = 0.0; //uses distance formula to find double value between two characters
       distance = Math.sqrt(((x-aChar.getX())^2) + ((y-aChar.getY())^2));
@@ -41,12 +38,19 @@ public class Character
  }
  
  public void attack(Character aChar){// function for attack, uses parameter aChar
-        if((Math.random() * 16) >= this.getDistance(aChar))
-        {
+    if((Math.random() * 16) >= this.getDistance(aChar)){
          aChar.hp = aChar.hp - 1;
          System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
-        }
     }
+ }
+ 
+ public void addAmmo(){
+     ammo++;
+ }
+ 
+ public void heal(){
+     hp++;
+ }
     
  public void moveUp(Grid grid){
     if(grid.isSpotEmpty(getX(), getY()-1)){
@@ -74,6 +78,6 @@ public class Character
         x -= 1;
         grid.setSpot(getX(), getY(), grid.getSpot(getX()+1, getY()));
         grid.setSpot(getX()+1, getY(), -1);
-    } 
- 
+    }
+ }
 }
