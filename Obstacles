@@ -1,6 +1,6 @@
-public class Obstacle extends Character
+public class Obstacle extends Character //extends character so it can interact with other objects on the grid
 {
     public Obstacle(int newX, int newY, String newName, int newHp){
-        super(newX, newY, newName, newHp);
+        super(newX, newY, newName, newHp); 
     }
 }
