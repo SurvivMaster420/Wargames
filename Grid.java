@@ -63,7 +63,7 @@ public class Grid
                 if(board[i][j] == -1){
                    out+="   "; 
                 } else {
-                    out+=" "+board[i][j]+" ";
+                    out+=" "+board[i][j]+"\u+25A0 ";
                 }// 0x25A0 Black square 0x2604 ammo 0x2764 heart
             }
             out+="]\n";
