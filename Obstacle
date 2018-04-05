@@ -1,6 +1,21 @@
+/**
+ * Write a description of class Obstacle here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class Obstacle extends Character //extends character so it can interact with other objects on the grid
 {
-    public Obstacle(int newX, int newY, String newName, int newHp){
-        super(newX, newY, newName, newHp); 
+    public Obstacle(int newX, int newY, String newName, int newHp, int newAmmo){
+        super(newX, newY, newName, newHp, newAmmo); 
+    }
+    public String getGridIcon(){
+        return "\u25A9";//crossed square
+    }
+    public String toString(){
+        String out = "";
+        out += "An Obstacle " + getGridIcon() + "\n";
+        out += "Coordinates: ("+getX()+", "+getY()+")\n";
+        return out;
     }
 }
