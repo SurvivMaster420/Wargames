@@ -7,8 +7,6 @@
  */
 public class GameTest
 {
-    enum Direction{UP, DOWN, LEFT, RIGHT}
-    
     public static void main(String args[]){
         Grid g = new Grid(10); //creates a 10x10 grid of empty spaces
         Robot aChar = new Robot(0,0,"Bender",10,5); //creates a robot object
