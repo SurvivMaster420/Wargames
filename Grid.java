@@ -10,6 +10,7 @@ public class Grid
     private int numOfCharacters = 0; //an int keeping track of the number of Characters in the Grid
     private int[][] board; //a 2D array which, when printed out, represents where 
     private ArrayList<Character> players = new ArrayList<Character>();
+    Character empty = new Character (0,0,"Empty Space",0,0);
     public Grid(int n){
         board = new int[n][n];
         for(int i = 0; i < board.length; i++){
@@ -23,8 +24,8 @@ public class Grid
         players.add(aCharacter);
         numOfCharacters++;
         board[aCharacter.getY()][aCharacter.getX()] = numOfCharacters;
+        aCharacter.updateIsOnBoard();
     }
-    
     public void addCharacterRandomly(Character aCharacter){
         Random gen = new Random();
         players.add(aCharacter);
@@ -37,8 +38,9 @@ public class Grid
             y = gen.nextInt(board.length);
         }
         board[y][x] = numOfCharacters;
+        aCharacter.updateIsOnBoard();
+        updateCharCoordinates(aCharacter);
     }
-    
     public boolean isSpotEmpty(int x, int y){
         if(board[y][x] == -1){
             return true;
@@ -46,14 +48,32 @@ public class Grid
             return false;
         }
     }
-    
     public void setSpot(int x1, int y1, int item){
         board[y1][x1] = item;
     }
-    
     public int getSpot(int x, int y){
         return board[y][x];
     }
+    public Character getCharAtLocation(int x, int y){
+        if(board[y][x] == -1){
+            System.out.println("This Spot is Empty");
+            return empty;
+        } else {
+            return players.get(board[y][x] - 1);
+        }
+    }
+    public void updateCharCoordinates(Character aChar){
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[i].length; j++){
+                if(board[i][j] == getSpot(aChar.getX(), aChar.getY())-1){
+                    aChar.updateCoords(j, i);
+                }
+            }
+        }
+    }
+    
+    public int getMaxX(){return board[0].length - 1;}
+    public int getMaxY(){return board.length - 1;}
     
     public String display(){
         String out = "";
@@ -61,10 +81,10 @@ public class Grid
             out+="[";
             for(int j = 0; j < board[i].length; j++){
                 if(board[i][j] == -1){
-                   out+="   "; 
+                   out+=" \u25A6 "; 
                 } else {
-                    out+=" "+board[i][j]+"\u+25A0 ";
-                }// 0x25A0 Black square 0x2604 ammo 0x2764 heart
+                    out+=" "+(getCharAtLocation(j,i)).getGridIcon()+" ";
+                }
             }
             out+="]\n";
         }
