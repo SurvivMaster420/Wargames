@@ -7,16 +7,22 @@
  */
 public class Robot extends Character
 {
-    // instance variables - replace the example below with your own
-    private int x;
-    private int y;
-    private int hp;
-    private int ammo;
     /**
      * Constructor for objects of class Robot
      */
-    public Robot(int newX, int newY, String newName, int newHp)
-    {
-        super(newX, newY, newName, newHp);
+    public Robot(int newX, int newY, String newName, int newHp, int newAmmo){
+        super(newX, newY, newName, newHp, newAmmo);
+    }
+    public String getGridIcon(){
+        return "\u25A2";//rounded square
+    }
+    public String toString(){
+        String out = "";
+        out += "Name: " + getName() + " " + getGridIcon()+"\n";
+        out += "Class: Robot\n";
+        out += "HP: " + getHp() + "\n";
+        out += "Ammo: " + getAmmo() + "\n";
+        out += "Coordinates: ("+getX()+", "+getY()+")\n";
+        return out;
     }
 }
