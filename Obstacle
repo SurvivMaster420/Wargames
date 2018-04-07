@@ -10,7 +10,7 @@ public class Obstacle extends Character //extends character so it can interact w
         super(newX, newY, newName, newHp, newAmmo); 
     }
     public String getGridIcon(){
-        return "\u25A9";//crossed square
+        return "\u25CF";//black circle
     }
     public String toString(){
         String out = "";
