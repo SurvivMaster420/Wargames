@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Character
 { 
      
@@ -8,6 +9,10 @@ public class Character
  private int hp;
  private int ammo;
  private boolean isOnBoard;
+ private boolean isAlive;
+ 
+ Random rand = new Random();
+ public final double MAX_DISTANCE = Math.sqrt(162);
  
  public Character(int newX, int newY, String newName, int newHp, int newAmmo){
      x = newX;
@@ -16,6 +21,7 @@ public class Character
      hp = newHp;
      ammo = newAmmo;
      isOnBoard = false;
+     isAlive = getIsAlive();
  }
  
  public int getX(){return x;}
@@ -24,9 +30,16 @@ public class Character
  public int getHp(){return hp;}
  public int getAmmo(){return ammo;}
  public boolean getIsOnBoard(){return isOnBoard;}
+ public boolean getIsAlive(){
+    if(hp > 0){
+        return true;
+    } else {
+        return false;
+    }
+ }
  public double getDistance(Character aChar){
      double distance = 0.0; //uses distance formula to find double value between two characters
-     distance = Math.sqrt(((x-aChar.getX())^2) + ((y-aChar.getY())^2));
+     distance = Math.sqrt(((aChar.getX()-this.getX())*(aChar.getX()-this.getX()))+((aChar.getY()-this.getY())*(aChar.getY()-this.getY())));
      return distance; //return distance between two characters
  }
  public String getGridIcon(){
@@ -40,11 +53,19 @@ public class Character
  }
  
  public void attack(Character aChar){// function for attack, uses parameter aChar
-     if((Math.random() * 16) >= this.getDistance(aChar)){
-          aChar.hp = aChar.hp - 1;
-          System.out.println(aChar.name + "loses 1 HP"+ "\n Current HP: " + aChar.hp);
+     double rate = rand.nextDouble();
+     if(ammo <= 0){
+         System.out.println("Out of Ammo");
+     } else {
+         if((rate * MAX_DISTANCE) >= this.getDistance(aChar)){
+             aChar.hp = aChar.hp - 2;
+             ammo--;
+             System.out.println("Hit!\n");
+         } else{
+             ammo--;
+             System.out.println("Miss!\n");
+         }
      }
-     
  }
  
  public void addAmmo(){
