@@ -75,18 +75,20 @@ public class Grid
     public int getMaxX(){return board[0].length - 1;}
     public int getMaxY(){return board.length - 1;}
     
+    public ArrayList<Character> getListOfCharacters(){return players;}
+    
     public String display(){
-        String out = "";
+        String out = "   0  1  2  3  4  5  6  7  8  9\n";
         for(int i = 0; i < board.length; i++){
-            out+="[";
+            out+=i+" ";
             for(int j = 0; j < board[i].length; j++){
                 if(board[i][j] == -1){
-                   out+=" \u25A6 "; 
+                   out+="   "; 
                 } else {
                     out+=" "+(getCharAtLocation(j,i)).getGridIcon()+" ";
                 }
             }
-            out+="]\n";
+            out+="\n";
         }
         
         return out;
